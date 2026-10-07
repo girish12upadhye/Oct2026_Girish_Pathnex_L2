@@ -1,0 +1,5 @@
+Deep dived into some important AWS services like S3, Route53, VPC, Auto Scaling, Cloud Trail, Cloud Watch and Lambda for an hour.
+Practiced linux command for 30 mins
+An hour coding practice and pushed code to Git Repo
+English speaking for an hour
+Practiced git for an hour
