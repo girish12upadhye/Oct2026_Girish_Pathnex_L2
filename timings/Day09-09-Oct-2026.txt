@@ -1,0 +1,15 @@
+# What I did today
+
+Practiced linux for 30 mins.
+An hour coding practice and pushed code to Git Repo.
+Revised all AWS services learned so far.
+Git hands on for 30 mins.
+English speaking for an hour.
+Overview on Docker
+
+# Tomorrow's Task
+
+1 hour coding.
+1 hour english reading and english.
+AWS revision.
+1 hour learn Docker
