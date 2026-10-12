@@ -1,0 +1,12 @@
+# What I did today
+
+An hour coding practice and pushed code to Git Repo.
+30 mins revised Docker and AWS.
+Learned Kubernetes for an hour.
+English speaking for an hour.
+
+# Tomorrow's Task
+
+1 hour coding.
+1 hour english reading and english.
+1 hour Kubernetes and Docker revision.
