@@ -1,0 +1,13 @@
+# What I did today
+
+Revised AWS Docker and Kubernetes.
+An hour coding practice and pushed code to Git Repo.
+English speaking for an hour.
+Hands on Docker using kubernetes.
+
+# Tomorrow's Task
+
+1 hour coding.
+1 hour english speaking.
+1 hour Kubernetes and Docker revision.
+Kubernetes practical.
