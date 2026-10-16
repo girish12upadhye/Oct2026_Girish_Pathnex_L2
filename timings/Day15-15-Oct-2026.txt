@@ -1,0 +1,5 @@
+# What I did today
+
+An hour coding practice and pushed code to Git Repo.
+English speaking for an hour.
+Revised Docker and Kubernetes.
