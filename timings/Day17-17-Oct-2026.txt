@@ -1,0 +1,10 @@
+# What I did today
+
+An hour coding practice and pushed code to Git Repo.
+English speaking for an hour.
+Revised Helm, ArgoCD and Kubernetes.
+
+# Tomorrow's Task
+
+1 hour coding.
+1 hour Helm, ArgoCD and Kubernetes revision.
