@@ -1,0 +1,10 @@
+# What I did today
+
+An hour coding practice and pushed code to Git Repo.
+English speaking for an hour.
+Revised terraform and Kubernetes.
+
+# Tomorrow's Task
+
+1 hour coding.
+1 hour terraform and Kubernetes revision.
