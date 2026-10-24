@@ -1,0 +1,84 @@
+- name: Deploy Docker Containers with Helm
+  hosts: localhost
+  tasks:
+    - name: Install Helm
+      command: curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
+    - name: Deploy microservices with Helm
+      command: helm install girishtechverse-app ./microservice-chart
+
+# Terraform - Multi-Module Infrastructure with Outputs
+module "girishtechverse_vpc" {
+  source = "./vpc"
+}
+
+module "girishtechverse_instance" {
+  source = "./instance"
+  vpc_id = module.girishtechverse_vpc.vpc_id
+}
+
+output "instance_id" {
+  value = module.girishtechverse_instance.instance_id
+}
+
+# Kubernetes - Helm-based Auto-Scaling Deployments
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: girishtechverse-web-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: girishtechverse-web-app
+  template:
+    metadata:
+      labels:
+	app: girishtechverse-web-app
+    spec:
+      containers:
+	- name: nginx
+	  image: nginx
+	  ports:
+	    - containerPort: 80
+---
+
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: girishtechverse-web-app-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: girishtechverse-web-app
+  minReplicas: 3
+  maxReplicas: 15
+  targetCPUUtilizationPercentage: 80
+
+# Jenkinsfile - Scaling CI/CD Pipeline
+pipeline {
+    agent any
+    stages {
+	stage('Scale Up') {
+	    steps {
+		echo 'Scaling up Jenkins Pipeline agents for heavy workloads!!!!'
+		// Scaling logic
+	    }
+	}
+	stage('Build') {
+	    steps {
+		echo 'Building projects......'
+	    }
+	}
+	stage('Deploy') {
+	    steps {
+		echo 'Deploying project......'
+	    }
+	}
+    }
+}
+
+# Docket
+# Healthcheck
+FROM nginx
+HEALTHCHECK CMD curl --fail http://localhost || exit 1
