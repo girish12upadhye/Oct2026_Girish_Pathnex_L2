@@ -1,0 +1,43 @@
+# Day 28 — Advanced Networking with VPCs and Peering
+
+# Ansible - Set Up VPC Peering Beetween AWS Accounts
+- name: Setup VPC Peering Between Accounts
+  hosts: localhost
+  tasks:
+    - name: Create VPC peering connection
+      command: aws ec2 create-vpc-peering-connection --vpc-id vpc-12345678 --peer-vpc-id vpc-87654321
+
+# Terraform - VPC Peering and Route Tables
+resources "aws_vpc_peering_connection" "girishtechverse_peering" {
+  vpc_id	= aws_vpc.girishtechverse_vpc.id
+  peer_vpc_id	= aws_vpc.peer_vpc.id
+}
+
+resource "aws_route" "girishtechverse_route" {
+  route_table_id		= aws_route_table.girishtechverse_rt.id
+  destination_cidr_block	= "10.0.0.0/16"
+  vpc_peering_connection_id	= aws_vpc_peering_connection.girishtechverse_peering.id
+}
+
+# Kubernetes - Multi-Cluster VPC Peering and Network Policy
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: girishtechverse-vpc-policy
+spec:
+  podSelector:
+    matchLabels:
+      app: girishtechverse-app
+  ingress:
+    - from:
+	- podSelector:
+	    matchLables:
+	      app: girishtechverse-db
+
+# Docker
+# Docker Save, Load & Backup
+docker save -o girishtechverse-nginx.tar girishtechverse-nginx
+docker load -i girishtechverse-nginx.tar
+
+# Bash
+docker run --rm -v girishtechverse-volume:/data -v $(pwd):/backup ubuntu tar czf /backup girishtechverse-backup.tar.gz /data

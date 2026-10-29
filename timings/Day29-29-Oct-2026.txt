@@ -1,0 +1,6 @@
+# What I did today
+
+An hour coding practice and pushed code to Git Repo.
+English speaking for an hour.
+Revised all topics covered so far.
+Learned about SRE.
